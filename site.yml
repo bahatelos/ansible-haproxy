@@ -3,12 +3,14 @@
 
 # Apply common configuration to all hosts
 - hosts: all
+  become: yes
 
   roles:
   - common
 
 # Configure and deploy the load balancer(s).
 - hosts: lbservers
+  become: yes
 
   roles:
   - haproxy
